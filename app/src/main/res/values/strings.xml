@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">FSkating</string>
+    <string name="ic_home">Главная</string>
+    <string name="ic_book">Теория</string>
+    <string name="ic_video">Видео</string>
+    <string name="ic_skate">Фигуристы</string>
+    <string name="error">Раздел разрабатывается</string>
+</resources>
