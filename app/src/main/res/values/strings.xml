@@ -5,4 +5,16 @@
     <string name="ic_video">Видео</string>
     <string name="ic_skate">Фигуристы</string>
     <string name="error">Раздел разрабатывается</string>
+    <string name="choose">Выберите раздел:</string>
+    <string name="profile1">Александра Степанова</string>
+    <string name="profile2">Иван Букин</string>
+    <string name="coaches"><u>Тренерский штаб:</u></string>
+    <string name="coaches_sb">Ирина Жук, Александр Свинин</string>
+    <string name="seasons"><u>Программы сезона 2021-2022:</u></string>
+    <string name="rd">Ритм-танец: Apache, Everybody</string>
+    <string name="fd">Прозивольный танец: Ромео и Джульетта</string>
+    <string name="winners"><u>Достижения:</u></string>
+    <string name="ch_europe">Чемпионат Европы:</string>
+    <string name="ch_rus">Чемпионат России:</string>
+    <string name="gp">Этапы Гран-При:</string>
 </resources>
