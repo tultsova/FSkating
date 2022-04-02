@@ -19,30 +19,74 @@
         app:menu="@menu/menu_bottom_navigation" />
 
     <LinearLayout
-        android:id="@+id/ln_container"
+    android:id="@+id/ln_container"
+    android:layout_width="match_parent"
+    android:layout_height="0dp"
+    app:layout_constraintBottom_toTopOf="@id/bottom_navigation"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toTopOf="parent"
+    android:orientation="vertical"
+    android:paddingStart="19dp"
+    android:paddingEnd="19dp"
+    android:paddingTop="30dp">
+    <!-- Поиск посмотреть тутор-->
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="0dp"
-        app:layout_constraintBottom_toTopOf="@id/bottom_navigation"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        android:orientation="vertical"
-        android:paddingStart="19dp"
-        android:paddingEnd="19dp"
-        >
-
+        android:layout_height="wrap_content"
+        android:background="@drawable/search_background"
+        android:orientation="horizontal"
+        android:layout_marginBottom="8dp">
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_search"
+            android:paddingStart="13dp"
+            android:paddingTop="8dp" />
+        <EditText android:id="@+id/inputSearch"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:hint="Поиск..."
+            android:inputType="textVisiblePassword"/>
+    </LinearLayout>
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="@drawable/search_background"
-            >
-            <ImageView
+            android:layout_gravity="center"
+            android:orientation="vertical"
+            android:paddingTop="15dp"
+            android:paddingBottom="15dp">
+
+            <VideoView
+                android:id="@+id/video_1"
+                android:layout_width="match_parent"
+                android:layout_height="200dp"/>
+            <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:src="@drawable/ic_search"
-                android:paddingStart="13dp"
-                android:paddingTop="8dp"/>
+                android:paddingBottom="8dp"
+                android:text="@string/video1"
+                android:textSize="18dp" />
+            <VideoView
+                android:id="@+id/video_2"
+                android:layout_width="match_parent"
+                android:layout_height="200dp"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingBottom="8dp"
+                android:text="@string/video2"
+                android:textSize="18dp"/>
+            <VideoView
+                android:id="@+id/video_3"
+                android:layout_width="match_parent"
+                android:layout_height="200dp"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingBottom="8dp"
+                android:text="@string/video3"
+                android:textSize="18dp" />
         </LinearLayout>
     </LinearLayout>
-
 </androidx.constraintlayout.widget.ConstraintLayout>

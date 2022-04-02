@@ -12,9 +12,9 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_stepbukin);
+        setContentView(R.layout.activity_video);
 
-        VideoView videoRt = findViewById(R.id.video_rt);
+      /*  VideoView videoRt = findViewById(R.id.video_rt);
         String videoPathRt = "android.resource://" + getPackageName() + "/" + R.raw.video_rt;
         Uri videoRtUri = Uri.parse(videoPathRt);
         videoRt.setVideoURI(videoRtUri);
@@ -30,6 +30,6 @@ public class MainActivity extends AppCompatActivity {
 
         MediaController mediaController2 = new MediaController(this);
         videoPt.setMediaController(mediaController2);
-        mediaController2.setAnchorView(videoPt);
+        mediaController2.setAnchorView(videoPt);*/
     }
 }

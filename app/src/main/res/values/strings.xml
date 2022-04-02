@@ -16,5 +16,7 @@
     <string name="winners"><u>Достижения:</u></string>
     <string name="ch_europe">Чемпионат Европы:</string>
     <string name="ch_rus">Чемпионат России:</string>
-    <string name="gp">Этапы Гран-При:</string>
+    <string name="video1">Чемпионат Европы 2022. Женщины - ПП</string>
+    <string name="video2">Чемпионат Мира 2021. Юзуру Ханю - КП</string>
+    <string name="video3">Олимпийские игры 2022. Марк Кондратюк - КП</string>
 </resources>
