@@ -3,6 +3,7 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/nasty/AndroidStudioProjects/FSkating/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.165" />
         <entry key="..\:/Users/nasty/AndroidStudioProjects/FSkating/app/src/main/res/drawable/btn_trusova.xml" value="0.1645" />
         <entry key="..\:/Users/nasty/AndroidStudioProjects/FSkating/app/src/main/res/drawable/calendar_background.xml" value="0.165" />
         <entry key="..\:/Users/nasty/AndroidStudioProjects/FSkating/app/src/main/res/drawable/ic______.xml" value="0.1645" />
@@ -10,19 +11,23 @@
         <entry key="..\:/Users/nasty/AndroidStudioProjects/FSkating/app/src/main/res/drawable/ic_home.xml" value="0.1645" />
         <entry key="..\:/Users/nasty/AndroidStudioProjects/FSkating/app/src/main/res/drawable/ic_skate.xml" value="0.1645" />
         <entry key="..\:/Users/nasty/AndroidStudioProjects/FSkating/app/src/main/res/drawable/ic_video.xml" value="0.1645" />
-        <entry key="..\:/Users/nasty/AndroidStudioProjects/FSkating/app/src/main/res/layout/activity_book_main.xml" value="0.2" />
+        <entry key="..\:/Users/nasty/AndroidStudioProjects/FSkating/app/src/main/res/drawable/small_calendar_background.xml" value="0.1655" />
+        <entry key="..\:/Users/nasty/AndroidStudioProjects/FSkating/app/src/main/res/layout/activity_book_main.xml" value="0.264" />
         <entry key="..\:/Users/nasty/AndroidStudioProjects/FSkating/app/src/main/res/layout/activity_book_single.xml" value="0.2421875" />
-        <entry key="..\:/Users/nasty/AndroidStudioProjects/FSkating/app/src/main/res/layout/activity_cards.xml" value="0.2" />
+        <entry key="..\:/Users/nasty/AndroidStudioProjects/FSkating/app/src/main/res/layout/activity_cards.xml" value="0.264" />
         <entry key="..\:/Users/nasty/AndroidStudioProjects/FSkating/app/src/main/res/layout/activity_error.xml" value="0.264" />
         <entry key="..\:/Users/nasty/AndroidStudioProjects/FSkating/app/src/main/res/layout/activity_main.xml" value="0.2" />
         <entry key="..\:/Users/nasty/AndroidStudioProjects/FSkating/app/src/main/res/layout/activity_stepbukin.xml" value="0.264" />
         <entry key="..\:/Users/nasty/AndroidStudioProjects/FSkating/app/src/main/res/layout/activity_stepbukin_test.xml" value="0.2421875" />
-        <entry key="..\:/Users/nasty/AndroidStudioProjects/FSkating/app/src/main/res/layout/activity_video.xml" value="0.2421875" />
+        <entry key="..\:/Users/nasty/AndroidStudioProjects/FSkating/app/src/main/res/layout/activity_video.xml" value="0.18565400843881857" />
         <entry key="..\:/Users/nasty/AndroidStudioProjects/FSkating/app/src/main/res/layout/actvity_book_main.xml" value="0.264" />
-        <entry key="..\:/Users/nasty/AndroidStudioProjects/FSkating/app/src/main/res/layout/actvity_calendar.xml" value="0.2" />
+        <entry key="..\:/Users/nasty/AndroidStudioProjects/FSkating/app/src/main/res/layout/actvity_calendar.xml" value="0.264" />
+        <entry key="..\:/Users/nasty/AndroidStudioProjects/FSkating/app/src/main/res/layout/calendar_layout.xml" value="0.72" />
+        <entry key="..\:/Users/nasty/AndroidStudioProjects/FSkating/app/src/main/res/layout/competitions.xml" value="0.2421875" />
         <entry key="..\:/Users/nasty/AndroidStudioProjects/FSkating/app/src/main/res/layout/fragment_text.xml" value="0.2" />
         <entry key="..\:/Users/nasty/AndroidStudioProjects/FSkating/app/src/main/res/layout/items.xml" value="0.2" />
         <entry key="..\:/Users/nasty/AndroidStudioProjects/FSkating/app/src/main/res/layout/test_recycler.xml" value="0.2421875" />
+        <entry key="..\:/Users/nasty/AndroidStudioProjects/FSkating/app/src/main/res/layout/video_fragment.xml" value="0.2421875" />
         <entry key="..\:/Users/nasty/AndroidStudioProjects/FSkating/app/src/main/res/menu/menu_bottom_navigation.xml" value="0.2421875" />
       </map>
     </option>

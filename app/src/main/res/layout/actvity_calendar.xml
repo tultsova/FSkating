@@ -3,6 +3,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:background="@color/background">
 
     <com.google.android.material.bottomnavigation.BottomNavigationView
@@ -29,24 +30,18 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.0">
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="33dp"
+        <CalendarView
             android:layout_marginTop="33dp"
-            android:layout_marginEnd="33dp"
-            android:background="@drawable/calendar_background"
-            android:orientation="horizontal"
-            app:layout_constraintTop_toTopOf="parent">
+            android:layout_gravity="center_horizontal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/small_calendar_background"/>
 
-
-                <CalendarView
-                    android:id="@+id/calendarView"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:scaleX=".5"
-                    android:scaleY=".5"/>
-            </LinearLayout>
-        </LinearLayout>
+            <androidx.recyclerview.widget.RecyclerView
+                android:layout_marginTop="21dp"
+                android:layout_marginStart="21dp"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                tools:listitem="@layout/competitions" />
+    </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

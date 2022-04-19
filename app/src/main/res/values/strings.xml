@@ -18,6 +18,24 @@
     <string name="ch_rus">Чемпионат России:</string>
     <string name="video1">Чемпионат Европы 2022. Женщины - ПП</string>
     <string name="video2">Чемпионат Мира 2021. Юзуру Ханю - КП</string>
+    <string name="video3">Олимпийские игры 2022. Марк Кондартюк - КП</string>
     <string name="bookSingle">Одиночное фигурное катание</string>
+    <string name="pairs">Парное катание</string>
+    <string name="single">Одиночное катание</string>
+    <string name="dance">Танцы на льду</string>
+    <string name="score">Оценки</string>
+    <string name="rec">Рекомендации</string>
+    <string name="jumps">Прыжки</string>
+    <string name="spins">Вращения</string>
+    <string name="choreo">Хореография</string>
+    <string name="types">Виды программ</string>
+    <string name="search">Поиск...</string>
+    <string name="kisiki">Александра Бойкова, Дмитрий Козловский</string>
+    <string name="kami">Камила Валиева</string>
+    <string name="sasha">Александра Трусова</string>
+    <string name="mark">Марк Кондратюк</string>
+    <string name="stepbuk">Александра Степанова, Иван Букин</string>
+    <string name="anya">Анна Щербакова</string>
+    <string name="gp">Этапы Гран-При:</string>
     <string name="bookSingleTheory">Одиночное фигурное катание — это дисциплина, в которой мужчины и женщины соревнуются по сумме баллов за две обязательные программы: короткую ипроизвольную. Судьи оценивают спирали, вращения, прыжки и хореографические элементы.</string>
 </resources>

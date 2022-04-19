@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:background="@color/background">
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
 
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:id="@+id/bottom_navigation"
@@ -19,81 +19,73 @@
         app:menu="@menu/menu_bottom_navigation" />
 
     <LinearLayout
-        android:id="@+id/ln_container"
         android:layout_width="match_parent"
         android:layout_height="0dp"
+        android:paddingStart="26dp"
+        android:paddingEnd="26dp"
+        android:orientation="vertical"
         app:layout_constraintBottom_toTopOf="@id/bottom_navigation"
         app:layout_constraintTop_toTopOf="parent"
-        android:layout_marginStart="26dp"
-        android:layout_marginEnd="26dp"
-        android:orientation="vertical">
+        tools:ignore="RtlSymmetry">
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/choose"
-            android:textSize="24sp"
             android:layout_marginTop="36dp"
             android:paddingBottom="29dp"
-            android:textColor="@color/text_color" />
-         <LinearLayout
-             android:layout_width="match_parent"
-             android:layout_height="wrap_content"
-             android:orientation="horizontal"
-             android:gravity="center"
-             android:layout_weight="1">
-            <ImageButton
-                android:id="@+id/btn_img_trusova"
-                android:layout_height="match_parent"
-                android:layout_width="match_parent"
-                android:scaleType="fitXY"
-                android:layout_weight="1"
-                android:src="@drawable/btn_trusova"
-                android:background="@color/background"
-                android:paddingRight="6dp"
-                android:paddingBottom="29dp">
-            </ImageButton>
-            <ImageButton
-                android:id="@+id/btn_img_score"
-                android:layout_height="match_parent"
-                android:layout_width="match_parent"
-                android:layout_weight="1"
-                android:scaleType="fitXY"
-                android:src="@drawable/btn_skate"
-                android:background="@color/background"
-                android:paddingLeft="6dp"
-                android:paddingBottom="29dp">
-            </ImageButton>
-        </LinearLayout>
-        <LinearLayout
+            android:text="@string/choose"
+            android:textColor="@color/text_color"
+            android:textSize="24sp"/>
+        <TableLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:layout_weight="1"
-            android:gravity="center">
-        <ImageButton
-            android:id="@+id/btn_img_ice_dance"
-            android:layout_height="match_parent"
-            android:layout_width="wrap_content"
-            android:src="@drawable/btn_ice_dance"
-            android:layout_weight="1"
-            android:scaleType="fitXY"
-            android:background="@color/background"
-            android:paddingBottom="29dp"
-            android:paddingRight="6dp">
-        </ImageButton>
-        <ImageButton
-            android:id="@+id/btn_img_pairs"
-            android:layout_height="match_parent"
-            android:layout_width="wrap_content"
-            android:layout_weight="1"
-            android:scaleType="fitXY"
-            android:src="@drawable/btn_pairs"
-            android:background="@color/background"
-            android:paddingLeft="6dp"
-            android:paddingBottom="29dp">
-        </ImageButton>
-        </LinearLayout>
-
+            android:layout_height="wrap_content">
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:paddingBottom="29dp">
+                <ImageButton
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="@color/background"
+                    android:contentDescription="@string/single"
+                    android:paddingEnd="6dp"
+                    android:scaleType="fitXY"
+                    android:src="@drawable/btn_trusova"/>
+                <ImageButton
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="@color/background"
+                    android:contentDescription="@string/score"
+                    android:paddingStart="6dp"
+                    android:scaleType="fitXY"
+                    android:src="@drawable/btn_skate"/>
+            </TableRow>
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:paddingBottom="29dp">
+                <ImageButton
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="@color/background"
+                    android:contentDescription="@string/dance"
+                    android:paddingEnd="6dp"
+                    android:scaleType="fitXY"
+                    android:src="@drawable/btn_ice_dance" />
+                <ImageButton
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="@color/background"
+                    android:contentDescription="@string/pairs"
+                    android:paddingStart="6dp"
+                    android:scaleType="fitXY"
+                    android:src="@drawable/btn_pairs" />
+            </TableRow>
+        </TableLayout>
     </LinearLayout>
-
 </androidx.constraintlayout.widget.ConstraintLayout>

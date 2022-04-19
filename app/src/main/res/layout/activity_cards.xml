@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
@@ -19,7 +20,6 @@
         app:menu="@menu/menu_bottom_navigation" />
 
     <LinearLayout
-        android:id="@+id/ln_container"
         android:layout_width="match_parent"
         android:layout_height="0dp"
         app:layout_constraintBottom_toTopOf="@id/bottom_navigation"
@@ -30,109 +30,32 @@
         android:paddingStart="19dp"
         android:paddingEnd="19dp"
         android:paddingTop="30dp">
-<!-- Поиск посмотреть тутор-->
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="@drawable/search_background"
             android:orientation="horizontal"
-            android:layout_marginBottom="8dp">
-          <ImageView
-              android:layout_width="wrap_content"
-              android:layout_height="wrap_content"
-              android:src="@drawable/ic_search"
-              android:paddingStart="13dp"
-              android:paddingTop="8dp" />
-            <EditText android:id="@+id/inputSearch"
+            android:layout_marginBottom="10dp">
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_search"
+                android:paddingStart="13dp"
+                android:paddingTop="8dp"
+                android:paddingEnd="8dp"
+                tools:ignore="RtlSymmetry" />
+            <EditText
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
-                android:hint="Поиск..."
-                android:inputType="textVisiblePassword"/>
+                android:hint="@string/search"/>
         </LinearLayout>
-        <ScrollView
+        <GridView
+            android:id="@+id/grid"
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:orientation="vertical">
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="horizontal"
-                    android:gravity="center"
-                    android:layout_weight="1"
-                    android:paddingTop="17dp">
-                    <ImageButton
-                        android:layout_height="200dp"
-                        android:layout_width="match_parent"
-                        android:scaleType="fitXY"
-                        android:layout_weight="1"
-                        android:src="@drawable/kisiki_card"
-                        android:background="@color/background"
-                        android:paddingEnd="10dp"
-                        android:paddingBottom="17dp"/>
-                        <ImageButton
-                            android:layout_height="200dp"
-                            android:layout_width="match_parent"
-                            android:scaleType="fitXY"
-                            android:layout_weight="1"
-                            android:src="@drawable/kamila_card"
-                            android:background="@color/background"
-                            android:paddingLeft="10dp"
-                            android:paddingBottom="17dp"/>
-                </LinearLayout>
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="horizontal"
-                    android:gravity="center"
-                    android:layout_weight="1">
-                    <ImageButton
-                        android:layout_height="200dp"
-                        android:layout_width="match_parent"
-                        android:scaleType="fitXY"
-                        android:layout_weight="1"
-                        android:src="@drawable/mark_card"
-                        android:background="@color/background"
-                        android:paddingRight="10dp"
-                        android:paddingBottom="17dp"/>
-                    <ImageButton
-                        android:layout_height="200dp"
-                        android:layout_width="match_parent"
-                        android:scaleType="fitXY"
-                        android:layout_weight="1"
-                        android:src="@drawable/stepbuk_card"
-                        android:background="@color/background"
-                        android:paddingLeft="10dp"
-                        android:paddingBottom="17dp"/>
-                </LinearLayout>
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="horizontal"
-                    android:gravity="center"
-                    android:layout_weight="1">
-                    <ImageButton
-                        android:layout_height="200dp"
-                        android:layout_width="match_parent"
-                        android:scaleType="fitXY"
-                        android:layout_weight="1"
-                        android:src="@drawable/sasha_card"
-                        android:background="@color/background"
-                        android:paddingRight="10dp"
-                        android:paddingBottom="17dp"/>
-                    <ImageButton
-                        android:layout_height="200dp"
-                        android:layout_width="match_parent"
-                        android:scaleType="fitXY"
-                        android:layout_weight="1"
-                        android:src="@drawable/anya_card"
-                        android:background="@color/background"
-                        android:paddingLeft="10dp"
-                        android:paddingBottom="17dp"/>
-                </LinearLayout>
-            </LinearLayout>
-        </ScrollView>
+            android:layout_height="match_parent"
+            android:numColumns="2"
+            android:gravity="center"
+            android:horizontalSpacing="10dp"
+            android:stretchMode="columnWidth"/>
     </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>
