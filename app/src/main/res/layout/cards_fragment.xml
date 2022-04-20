@@ -11,22 +11,31 @@
             android:layout_height="wrap_content"
             android:background="@drawable/search_background"
             android:orientation="horizontal"
-            android:layout_marginBottom="8dp">
+            android:layout_marginBottom="10dp">
             <ImageView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:src="@drawable/ic_search"
                 android:paddingStart="13dp"
                 android:paddingTop="8dp"
+                android:paddingEnd="8dp"
                 tools:ignore="RtlSymmetry" />
-            <EditText android:id="@+id/inputSearch"
+            <EditText
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
-                android:hint="@string/search" />
+                android:hint="@string/search"/>
         </LinearLayout>
-        <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/recyclerView"
+    <androidx.recyclerview.widget.RecyclerView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <GridView
+            android:id="@+id/grid"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            tools:listitem="@layout/video_item" />
+            android:numColumns="2"
+            android:gravity="center"
+            android:horizontalSpacing="10dp"
+            android:stretchMode="columnWidth"
+            tools:listitem="@layout/cards_icon"/>
+    </androidx.recyclerview.widget.RecyclerView>
 </LinearLayout>

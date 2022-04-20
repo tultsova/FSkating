@@ -1,28 +1,22 @@
 package com.example.fskating;
 
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.recyclerview.widget.RecyclerView;
+import androidx.fragment.app.Fragment;
 
-import android.net.Uri;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.AdapterView;
-import android.widget.GridView;
-import android.widget.MediaController;
 import android.widget.TextView;
-import android.widget.VideoView;
 
+import dagger.hilt.android.AndroidEntryPoint;
+
+@AndroidEntryPoint
 public class MainActivity extends AppCompatActivity {
-
-
+    Fragment fr;
     private TextView mSelectText;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_video);
-
-        /*GridView gridview = (GridView) findViewById(R.id.grid);
-        gridview.setAdapter(new ImageAdapter(this));*/
+        setContentView(R.layout.main_activity);
 
     }
 

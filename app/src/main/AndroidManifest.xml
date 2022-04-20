@@ -3,6 +3,7 @@
     package="com.example.fskating">
 
     <application
+        android:name=".FSApplication"
         android:allowBackup="true"
         android:icon="@drawable/ic_skate"
         android:label="@string/app_name"

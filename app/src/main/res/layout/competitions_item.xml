@@ -1,0 +1,23 @@
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+    <TextView
+        android:id="@+id/data"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingBottom="8dp"
+        android:textColor="#05508A"
+        android:text=""
+        android:layout_marginStart="24dp"
+        android:textSize="20sp" />
+    <TextView
+        android:id="@+id/competitionName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingBottom="8dp"
+        android:text=""
+        android:textSize="17sp" />
+
+</LinearLayout>
