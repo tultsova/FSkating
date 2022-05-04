@@ -22,15 +22,17 @@
                 android:gravity="center"
                 android:orientation="vertical">
                 <TextView
+                    android:id="@+id/day"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="11"
+                    android:text=""
                     android:textSize="40sp"/>
                 <TextView
+                    android:id="@+id/month"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="апреля"
-                    android:textSize="25sp"/>
+                    android:text=""
+                    android:textSize="30sp"/>
             </LinearLayout>
             <TextView
                 android:layout_width="wrap_content"

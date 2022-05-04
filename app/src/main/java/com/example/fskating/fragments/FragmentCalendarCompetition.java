@@ -1,4 +1,4 @@
-package com.example.fskating.fragmnets;
+package com.example.fskating.fragments;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -37,7 +37,6 @@ public class FragmentCalendarCompetition extends Fragment {
         ViewModelCalendarCompetition vm = new ViewModelProvider(this)
                 .get(ViewModelCalendarCompetition.class);
         RecyclerView rv = root.findViewById(R.id.recyclerView);
-        rv.setHasFixedSize(true);
         RecyclerView.LayoutManager lm = new LinearLayoutManager(requireActivity());
         rv.setLayoutManager(lm);
         AdapterCompetition adapterCompetition = new AdapterCompetition();

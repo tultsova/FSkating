@@ -14,28 +14,31 @@
             android:textSize="24sp"/>
         <TableLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="match_parent"
+            android:gravity="center">
             <TableRow
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:paddingBottom="29dp">
+                android:layout_marginBottom="25dp"
+                android:gravity="center_horizontal">
                 <ImageButton
+                    android:id="@+id/btn_single"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
                     android:background="@color/background"
                     android:contentDescription="@string/single"
-                    android:paddingEnd="6dp"
                     android:scaleType="fitXY"
                     android:src="@drawable/btn_trusova"/>
                 <ImageButton
+                    android:id="@+id/btn_score"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
                     android:background="@color/background"
+                    android:layout_marginStart="15dp"
                     android:contentDescription="@string/score"
-                    android:paddingStart="6dp"
                     android:scaleType="fitXY"
                     android:src="@drawable/btn_skate"/>
             </TableRow>
@@ -43,23 +46,25 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:paddingBottom="29dp">
+                android:paddingBottom="25dp">
                 <ImageButton
+                    android:id="@+id/btn_dance"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
                     android:background="@color/background"
                     android:contentDescription="@string/dance"
-                    android:paddingEnd="6dp"
+
                     android:scaleType="fitXY"
                     android:src="@drawable/btn_ice_dance" />
                 <ImageButton
+                    android:id="@+id/btn_pairs"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
                     android:background="@color/background"
+                    android:layout_marginStart="12dp"
                     android:contentDescription="@string/pairs"
-                    android:paddingStart="6dp"
                     android:scaleType="fitXY"
                     android:src="@drawable/btn_pairs" />
             </TableRow>
