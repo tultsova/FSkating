@@ -31,19 +31,20 @@ public class FragmentCalendarCompetition extends Fragment {
             @NonNull LayoutInflater inflater,
             @Nullable ViewGroup container,
             @Nullable Bundle savedInstanceState
+
     ) {
         View root = inflater.inflate(R.layout.calendar_fragment, container, false);
 
-        ViewModelCalendarCompetition vm = new ViewModelProvider(this)
-                .get(ViewModelCalendarCompetition.class);
-        RecyclerView rv = root.findViewById(R.id.recyclerView);
-        RecyclerView.LayoutManager lm = new LinearLayoutManager(requireActivity());
-        rv.setLayoutManager(lm);
+        ViewModelCalendarCompetition viewModelCalendarCompetition =
+                new ViewModelProvider(this).get(ViewModelCalendarCompetition.class);
+        RecyclerView recyclerView = root.findViewById(R.id.recyclerView);
+        RecyclerView.LayoutManager layoutManager= new LinearLayoutManager(requireActivity());
+        recyclerView.setLayoutManager(layoutManager);
         AdapterCompetition adapterCompetition = new AdapterCompetition();
-        rv.setAdapter(adapterCompetition);
+        recyclerView.setAdapter(adapterCompetition);
 
-        vm.getAllCompetitions().observe(getViewLifecycleOwner(), modelCompetitions -> {
-            adapterCompetition.setCompetitionsList(modelCompetitions);
+        viewModelCalendarCompetition.getAllCompetitions().observe(getViewLifecycleOwner(), competition -> {
+            adapterCompetition.setCompetitionsList(competition);
             adapterCompetition.notifyDataSetChanged();
         });
 

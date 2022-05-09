@@ -1,15 +1,11 @@
 package com.example.fskating.models;
 
 import androidx.annotation.NonNull;
-import androidx.room.Entity;
-import androidx.room.PrimaryKey;
-
 import java.util.UUID;
 
-@Entity(tableName = "competition_table")
+
 public class ModelCompetition {
-    @PrimaryKey
-    @NonNull
+
     private Long id;
     private String data;
     private String competitionName;

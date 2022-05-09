@@ -4,6 +4,7 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.TextView;
 
@@ -23,11 +24,7 @@ import java.util.Locale;
 
 public class FragmentHome extends Fragment {
 
-    TextView day;
-    TextView month;
-    Date currentDate;
-    DateFormat dayFormat;
-    DateFormat monthFormat;
+    Button date;
         @Override
         public void onCreate(@Nullable Bundle savedInstanceState) {
             super.onCreate(savedInstanceState);
@@ -40,17 +37,25 @@ public class FragmentHome extends Fragment {
                 @Nullable ViewGroup container,
                 @Nullable Bundle savedInstanceState) {
             View root = inflater.inflate(R.layout.main_fragment, container, false);
-            day = root.findViewById(R.id.day);
-            month = root.findViewById(R.id.month);
+            date = root.findViewById(R.id.date);
 
             Calendar c = Calendar.getInstance();
             Locale locales = new Locale("ru");
-            SimpleDateFormat dayf = new SimpleDateFormat("dd");
+            SimpleDateFormat dayf = new SimpleDateFormat("dd\nMMMM", locales);
             String formattedDay = dayf.format(c.getTime());
-            day.setText(formattedDay);
-            SimpleDateFormat monthf = new SimpleDateFormat("MMMM", locales);
-            String formattedMonth = monthf.format(c.getTime());
-            month.setText(formattedMonth);
+            date.setText(formattedDay);
+            date.setOnClickListener(
+                    new View.OnClickListener() {
+                        @Override
+                        public void onClick(View view) {
+                            FragmentManager fm = requireActivity().getSupportFragmentManager();
+                            FragmentTransaction ft = fm.beginTransaction();
+                            ft.replace(R.id.fc, new FragmentCalendarCompetition());
+                            ft.addToBackStack(null);
+                            ft.commit();
+                        }
+                    }
+            );
             return root;
         }
 
