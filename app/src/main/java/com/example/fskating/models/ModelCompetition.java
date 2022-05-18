@@ -8,11 +8,13 @@ public class ModelCompetition {
 
     private Long id;
     private String data;
+    private String dataFormated;
     private String competitionName;
 
-    public ModelCompetition(Long id,String data, String competitionName) {
+    public ModelCompetition(Long id, String dataFormated, String data, String competitionName) {
         this.id = id;
         this.data = data;
+        this.dataFormated = dataFormated;
         this.competitionName = competitionName;
     }
 
@@ -35,6 +37,14 @@ public class ModelCompetition {
 
     public String getCompetitionName() {
         return competitionName;
+    }
+
+    public String getDataFormated() {
+        return dataFormated;
+    }
+
+    public void setDataFormated(String dataFormated) {
+        this.dataFormated = dataFormated;
     }
 
     public void setCompetitionName(String competitionName) {

@@ -47,14 +47,19 @@ public class FragmentCalendarCompetition extends Fragment {
         recyclerView.setLayoutManager(layoutManager);
         AdapterCompetition adapterCompetition = new AdapterCompetition();
         recyclerView.setAdapter(adapterCompetition);
+        viewModelCalendarCompetition.getCompetitions().observe(getViewLifecycleOwner(), competition -> {
+            adapterCompetition.setCompetitionsList(competition);
+            adapterCompetition.notifyDataSetChanged();
+        });
         CalendarView calendarView = root.findViewById(R.id.calendar);
         calendarView.setOnDateChangeListener(new CalendarView.OnDateChangeListener() {
-                @Override
-                public void onSelectedDayChange(@NonNull CalendarView calendarView, int i, int i1, int i2) {
-                    String date = i2 + "." + (i1+1);
-                    viewModelCalendarCompetition.inputDate(date);
-                }
-            });
+            @Override
+            public void onSelectedDayChange(@NonNull CalendarView calendarView, int i, int i1, int i2) {
+                String date = i2 + "." + (i1+1);
+                viewModelCalendarCompetition.inputDate(date);
+            }
+        });
+
         return root;
     }
 }

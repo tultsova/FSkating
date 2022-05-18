@@ -6,6 +6,7 @@ public class ModelCard {
 
     private Long idCard;
     private Integer res;
+    private Integer resProfile;
     private String name;
     private String coachingStaff;
     private String SP;
@@ -13,16 +14,25 @@ public class ModelCard {
     private String UrlSP;
     private String UrlFP;
 
-    public ModelCard(Long idCard, Integer res, String name, String coachingStaff,
+    public ModelCard(Long idCard, Integer res, Integer resProfile,String name, String coachingStaff,
                      String SP, String FP, String UrlSP, String UrlFP) {
         this.idCard = idCard;
         this.name = name;
         this.res = res;
+        this.resProfile = resProfile;
         this.coachingStaff = coachingStaff;
         this.SP = SP;
         this.FP = FP;
         this.UrlSP = UrlSP;
         this.UrlFP = UrlFP;
+    }
+
+    public Integer getResProfile() {
+        return resProfile;
+    }
+
+    public void setResProfile(Integer resProfile) {
+        this.resProfile = resProfile;
     }
 
     @NonNull

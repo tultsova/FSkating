@@ -29,7 +29,7 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:text="В ближайшее время соревнований не будет"
-                android:textSize="20sp"/>
+                android:textSize="18sp"/>
         </LinearLayout>
         <TextView
             android:layout_width="wrap_content"

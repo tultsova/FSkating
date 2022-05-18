@@ -27,7 +27,6 @@ public class ViewModelCalendarCompetition extends AndroidViewModel {
         super(application);
         this.repository=repository;
         this.competitions = new MutableLiveData<>();
-        repository.getAllCompetitions(competitions);
     }
 
     public MutableLiveData<List<ModelCompetition>> getCompetitions() {

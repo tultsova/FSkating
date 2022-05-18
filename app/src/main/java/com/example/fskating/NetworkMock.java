@@ -26,46 +26,46 @@ public class NetworkMock implements API{
         video = new ArrayList<>();
 
         // создание моделей соревнований
-        competitions.add(new ModelCompetition(1L, "4.2",
-                "4:55 Олимпиада. Командные соревнования. Мужчины - КП \n" +
-                        "6:35 Олимпиада. Командные соревнования. Танцы на льду - РТ \n" +
-                        "8:15 Олимпиада. Командные соревнования. Парное катание - КП"));
-        competitions.add(new ModelCompetition(2L, "6.2",
-                "4:30 Олимпиада. Командные соревнования. Женщины - КП \n" +
-                        "6:50 Олимпиада. Командные соревнования. Мужчины - ПП"));
-        competitions.add(new ModelCompetition(3L, "7.2",
-                "4:15 Олимпиада. Командные соревнования. Парное катание - ПП \n" +
-                        "5:30 Олимпиада. Командные соревнования. Танцы на льду - ПТ \n" +
-                        "6:35 Олимпиада. Командные соревнования. Женщины - ПП"));
+        competitions.add(new ModelCompetition(1L, "4.2", "4 февраля",
+                "4:55 Олимпиада. Командные соревнования.\n\t\t\t\t Мужчины - КП \n" +
+                        "6:35 Олимпиада. Командные соревнования.\n\t\t\t\t Танцы на льду - РТ \n" +
+                        "8:15 Олимпиада. Командные соревнования.\n\t\t\t\t Парное катание - КП"));
+        competitions.add(new ModelCompetition(2L, "6.2", "6 февраля",
+                "4:30 Олимпиада. Командные соревнования.\n\t\t\t\t Женщины - КП \n" +
+                        "6:50 Олимпиада. Командные соревнования.\n\t\t\t\t Мужчины - ПП"));
+        competitions.add(new ModelCompetition(3L, "7.2", "7 февраля",
+                "4:15 Олимпиада. Командные соревнования.\n\t\t\t\t Парное катание - ПП \n" +
+                        "5:30 Олимпиада. Командные соревнования.\n\t\t\t\t Танцы на льду - ПТ \n" +
+                        "6:35 Олимпиада. Командные соревнования.\n\t\t\t\t Женщины - ПП"));
 
 
         // создание моделей карточек спортсмена
-        cards.add(new ModelCard(1L, R.drawable.kisiki_card,
+        cards.add(new ModelCard(1L, R.drawable.kisiki_card, R.drawable.boik_profile,
                 "Александра Бойкова\nДмитрий Козловский",
                 "Тамара Москвина, Артур Минчук",
                 "Короткая программа: Лебединое озеро", "Прозивольная программа: Malaguena",
                 "icyHgZLF2yw", "dNqvyyLJaNk"));
-        cards.add(new ModelCard(2L, R.drawable.anya_card,
+        cards.add(new ModelCard(2L, R.drawable.anya_card, R.drawable.anya_profile,
                 "Анна Щербакова",
                 "Этери Тутберидзе, Сергей Дудаков, Даниил Глейхенгауз",
                 "Короткая программа: Dangerous Affairs", "Прозивольная программа: Мастер и Маргарита",
                 "a-aSBztW0JE", "hUkLekSdVcI"));
-        cards.add(new ModelCard(3L, R.drawable.stepbuk_card,
+        cards.add(new ModelCard(3L, R.drawable.stepbuk_card, R.drawable.stepbuk_profile,
                 "Александра Степанова\nИван Букин",
                 "Ирина Жук, Александр Свинин",
                 "Ритм-танец: Apache, Everybody", "Прозивольный танец: Ромео и Джульетта",
                 "9vv41ZJcJ2s" , "vKxt9RsrN-0"));
-        cards.add(new ModelCard(4L, R.drawable.sasha_card,
+        cards.add(new ModelCard(4L, R.drawable.sasha_card, R.drawable.sasha_profile,
                 "Александра Трусова",
                 "Этери Тутберидзе, Сергей Дудаков, Даниил Глейхенгауз",
                 "Короткая программа: Фрида", "Прозивольная программа: Круэлла",
                 "5RCoEg2_Uc4", "Xg4HKwY9V0E"));
-        cards.add(new ModelCard(5L, R.drawable.mark_card,
+        cards.add(new ModelCard(5L, R.drawable.mark_card, R.drawable.mark_profile,
                 "Марк Кондратюк",
                 "Светлана Соколовская",
                 "Короткая программа: Великолепный век", "Прозивольная программа: Иисус Христос - Супер-звезда",
                 "zY07aCH8Qsw", "jCYlBXjWybI"));
-        cards.add(new ModelCard(6L, R.drawable.kamila_card,
+        cards.add(new ModelCard(6L, R.drawable.kamila_card, R.drawable.kami_profile,
                 "Камила Валиева",
                 "Этери Тутберидзе, Сергей Дудаков, Даниил Глейхенгауз",
                 "Короткая программа: In Memoriam", "Прозивольная программа: Болеро",
@@ -167,7 +167,7 @@ public class NetworkMock implements API{
             Message message = new Message();
             List<ModelCompetition> search = new ArrayList<>();
             for (ModelCompetition competition: competitions) {
-                if (competition.getData().contains(date)) {
+                if (competition.getDataFormated().contains(date)) {
                     search.add(competition);
                 }
             }

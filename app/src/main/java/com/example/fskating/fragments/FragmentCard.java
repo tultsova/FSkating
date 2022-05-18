@@ -4,6 +4,7 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -53,6 +54,7 @@ public class FragmentCard extends Fragment {
 
         ViewModelCard viewModelCard =
                 new ViewModelProvider(this).get(ViewModelCard.class);
+        ImageView profile = root.findViewById(R.id.profile);
         TextView name = root.findViewById(R.id.name);
         TextView staff = root.findViewById(R.id.staff);
         TextView sp = root.findViewById(R.id.sp);
@@ -60,6 +62,7 @@ public class FragmentCard extends Fragment {
         YouTubePlayerView SP = root.findViewById(R.id.youtube_SP);
         YouTubePlayerView FP = root.findViewById(R.id.youtube_FP);
         viewModelCard.getCardInfo(id).observe(getViewLifecycleOwner(), card -> {
+            profile.setImageResource(card.getResProfile());
             name.setText(card.getName());
             staff.setText(card.getCoachingStaff());
             sp.setText(card.getSP());
