@@ -5,17 +5,24 @@ import androidx.annotation.NonNull;
 public class ModelCard {
 
     private Long idCard;
+    private Integer res;
     private String name;
     private String coachingStaff;
     private String SP;
     private String FP;
+    private String UrlSP;
+    private String UrlFP;
 
-    public ModelCard(Long idCard, String name, String coachingStaff, String SP, String FP) {
+    public ModelCard(Long idCard, Integer res, String name, String coachingStaff,
+                     String SP, String FP, String UrlSP, String UrlFP) {
         this.idCard = idCard;
         this.name = name;
+        this.res = res;
         this.coachingStaff = coachingStaff;
         this.SP = SP;
         this.FP = FP;
+        this.UrlSP = UrlSP;
+        this.UrlFP = UrlFP;
     }
 
     @NonNull
@@ -53,6 +60,30 @@ public class ModelCard {
 
     public String getFP() {
         return FP;
+    }
+
+    public String getUrlSP() {
+        return UrlSP;
+    }
+
+    public void setUrlSP(String urlSP) {
+        UrlSP = urlSP;
+    }
+
+    public String getUrlFP() {
+        return UrlFP;
+    }
+
+    public void setUrlFP(String urlFP) {
+        UrlFP = urlFP;
+    }
+
+    public Integer getRes() {
+        return res;
+    }
+
+    public void setRes(Integer res) {
+        this.res = res;
     }
 
     public void setFP(String FP) {

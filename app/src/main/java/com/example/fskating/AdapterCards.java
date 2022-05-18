@@ -1,29 +1,34 @@
 package com.example.fskating;
 
-import static com.example.fskating.R.drawable.anya_card;
-
-import android.graphics.drawable.Drawable;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageButton;
-import android.widget.TextView;
 
 import androidx.annotation.NonNull;
+import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.RecyclerView;
+
+import com.example.fskating.fragments.FragmentCard;
+import com.example.fskating.models.ModelCard;
+import com.pierfrancescosoffritti.androidyoutubeplayer.core.player.YouTubePlayer;
+import com.pierfrancescosoffritti.androidyoutubeplayer.core.player.listeners.AbstractYouTubePlayerListener;
+import com.pierfrancescosoffritti.androidyoutubeplayer.core.player.views.YouTubePlayerView;
 
 import java.util.ArrayList;
 import java.util.List;
 
 public class AdapterCards extends RecyclerView.Adapter<AdapterCards.CardView> {
 
-    private List<Integer> cardsList;
+    private List<ModelCard> cardsList;
+    Fragment fr;
 
-    public AdapterCards() {
+    public AdapterCards(Fragment fr) {
+        this.fr = fr;
         this.cardsList = new ArrayList<>();
     }
 
-    public void setCardsList(List<Integer> cardsList) {
+    public void setCardsList(List<ModelCard> cardsList) {
         this.cardsList = cardsList;
     }
 
@@ -37,7 +42,14 @@ public class AdapterCards extends RecyclerView.Adapter<AdapterCards.CardView> {
 
     @Override
     public void onBindViewHolder(@NonNull AdapterCards.CardView holder, int position) {
-        holder.getCard().setImageResource(cardsList.get(position));
+        holder.getCard().setImageResource(cardsList.get(position).getRes());
+        holder.getCard().setOnClickListener(view -> {
+            FragmentChanger.replaceFragment(
+                    fr.requireActivity().getSupportFragmentManager(),
+                    R.id.fc,
+                    new FragmentCard(cardsList.get(position).getIdCard())
+                    );
+        });
     }
 
     @Override

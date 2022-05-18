@@ -1,13 +1,10 @@
 package com.example.fskating;
 
-import androidx.lifecycle.LiveData;
-
-import com.example.fskating.models.ModelCompetition;
-
-import java.util.List;
-import java.util.logging.Handler;
+import android.os.Handler;
 
 public interface API {
-    void insertCompetition(ModelCompetition modelCompetition, Handler handler);
-    LiveData<List<ModelCompetition>> getAllCompetitions(Handler handler);
+    void getAllCompetitions(Handler handler);
+    void getCardInfo(Long id, Handler handler);
+    void getAllCards(Handler handler);
+    void getAllVideo(Handler handler);
 }

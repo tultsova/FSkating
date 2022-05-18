@@ -5,23 +5,27 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
-import android.widget.ImageButton;
-import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
+import androidx.lifecycle.ViewModelProvider;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.fskating.AdapterVideo;
 import com.example.fskating.R;
+import com.example.fskating.view_models.ViewModelVideo;
 
-import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
-import java.util.Date;
 import java.util.Locale;
 
+import dagger.hilt.android.AndroidEntryPoint;
+
+@AndroidEntryPoint
 public class FragmentHome extends Fragment {
 
     Button date;
@@ -56,6 +60,20 @@ public class FragmentHome extends Fragment {
                         }
                     }
             );
+
+            ViewModelVideo viewModelVideo =
+                    new ViewModelProvider(this).get(ViewModelVideo.class);
+            RecyclerView recyclerView = root.findViewById(R.id.recyclerView);
+            RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(requireActivity());
+            recyclerView.setLayoutManager(layoutManager);
+            AdapterVideo adapterVideo = new AdapterVideo();
+            recyclerView.setAdapter(adapterVideo);
+
+            viewModelVideo.getAllVideo().observe(getViewLifecycleOwner(), video -> {
+                adapterVideo.setVideoList(video);
+                adapterVideo.notifyDataSetChanged();
+            });
+
             return root;
         }
 

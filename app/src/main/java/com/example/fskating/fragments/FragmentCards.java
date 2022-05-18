@@ -8,14 +8,20 @@ import android.view.ViewGroup;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
+import androidx.lifecycle.ViewModelProvider;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.fskating.AdapterCards;
 import com.example.fskating.R;
+import com.example.fskating.view_models.ViewModelCard;
+import com.example.fskating.view_models.ViewModelCards;
 
 import java.util.ArrayList;
 
+import dagger.hilt.android.AndroidEntryPoint;
+
+@AndroidEntryPoint
 public class FragmentCards extends Fragment {
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
@@ -31,22 +37,20 @@ public class FragmentCards extends Fragment {
     ) {
         View root = inflater.inflate(R.layout.cards_fragment, container, false);
 
+        ViewModelCards viewModelCards =  new ViewModelProvider(this).get(ViewModelCards.class);
+
+
         RecyclerView rv = root.findViewById(R.id.recyclerView);
         rv.setHasFixedSize(true);
         RecyclerView.LayoutManager lm = new GridLayoutManager(requireActivity(), 2);
         rv.setLayoutManager(lm);
-        AdapterCards adapterCards = new AdapterCards();
+        AdapterCards adapterCards = new AdapterCards(this);
         rv.setAdapter(adapterCards);
 
-        ArrayList<Integer> res = new ArrayList<>();
-        res.add(R.drawable.anya_card);
-        res.add(R.drawable.kamila_card);
-        res.add(R.drawable.kisiki_card);
-        res.add(R.drawable.mark_card);
-        res.add(R.drawable.sasha_card);
-        res.add(R.drawable.stepbuk_card);
-        adapterCards.setCardsList(res);
-        adapterCards.notifyDataSetChanged();
+        viewModelCards.getAllCards().observe(getViewLifecycleOwner(), cards -> {
+            adapterCards.setCardsList(cards);
+            adapterCards.notifyDataSetChanged();
+        });
 
         return root;
     }

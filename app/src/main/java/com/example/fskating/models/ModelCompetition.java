@@ -1,7 +1,7 @@
 package com.example.fskating.models;
 
 import androidx.annotation.NonNull;
-import java.util.UUID;
+
 
 
 public class ModelCompetition {
