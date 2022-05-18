@@ -39,26 +39,20 @@
             android:layout_height="wrap_content"
             android:orientation="vertical">
 
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:paddingTop="8dp">
-
                 <TextView
+                    android:paddingTop="8dp"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:paddingEnd="5dp"
                     android:text="@string/coaches"
                     android:textSize="18sp" />
 
                 <TextView
                     android:id="@+id/staff"
+                    android:paddingTop="8dp"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="@string/coaches_sb"
-                    android:textSize="16sp" />
-            </LinearLayout>
+                    android:textSize="18sp" />
 
             <TextView
                 android:layout_width="wrap_content"
@@ -73,7 +67,7 @@
                 android:layout_height="wrap_content"
                 android:paddingTop="8dp"
                 android:text="@string/rd"
-                android:textSize="17sp" />
+                android:textSize="18sp" />
 
             <TextView
                 android:id="@+id/pp"
@@ -81,7 +75,7 @@
                 android:layout_height="wrap_content"
                 android:paddingTop="8dp"
                 android:text="@string/fd"
-                android:textSize="17sp" />
+                android:textSize="18sp" />
 
             <TextView
                 android:layout_width="wrap_content"

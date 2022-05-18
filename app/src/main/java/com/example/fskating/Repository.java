@@ -27,30 +27,26 @@ public class Repository {
         api = new NetworkMock();
     }
 
-    public LiveData<List<ModelCompetition>> getAllCompetitions() {
-        MutableLiveData<List<ModelCompetition>> mutableLiveData = new MutableLiveData<>();
+    public void getAllCompetitions(MutableLiveData<List<ModelCompetition>> competitonsList) {
         api.getAllCompetitions(new Handler(Looper.getMainLooper()){
             @Override
             public void handleMessage(Message message) {
                 super.handleMessage(message);
                 List<ModelCompetition> competitions = (List<ModelCompetition>) message.obj;
-                mutableLiveData.postValue(competitions);
+                competitonsList.postValue(competitions);
             }
         });
-        return mutableLiveData;
     }
 
-    public LiveData<List<ModelCard>> getAllCards() {
-        MutableLiveData<List<ModelCard>> mutableLiveData = new MutableLiveData<>();
+    public void getAllCards(MutableLiveData<List<ModelCard>> cardsList) {
         api.getAllCards(new Handler(Looper.getMainLooper()){
             @Override
             public void handleMessage(Message message) {
                 super.handleMessage(message);
                 List<ModelCard> cards = (List<ModelCard>) message.obj;
-                mutableLiveData.postValue(cards);
+                cardsList.postValue(cards);
             }
         });
-        return mutableLiveData;
     }
 
     public LiveData<ModelCard> getCardInfo(Long id) {
@@ -66,16 +62,47 @@ public class Repository {
         return mutableLiveData;
     }
 
-    public LiveData<List<ModelVideo>> getAllVideo() {
-        MutableLiveData<List<ModelVideo>> mutableLiveData = new MutableLiveData<>();
+    public void getAllVideo(MutableLiveData<List<ModelVideo>> videoList) {
         api.getAllVideo(new Handler(Looper.getMainLooper()){
             @Override
             public void handleMessage(Message message) {
                 super.handleMessage(message);
                 List<ModelVideo> video = (List<ModelVideo>) message.obj;
-                mutableLiveData.postValue(video);
+                videoList.postValue(video);
             }
         });
-        return mutableLiveData;
+    }
+
+    public void getAllCardsByName(String name, MutableLiveData<List<ModelCard>> cards) {
+        api.getAllCardsByName(name, new Handler(Looper.getMainLooper()){
+            @Override
+            public void handleMessage(Message message) {
+                super.handleMessage(message);
+                List<ModelCard> search = (List<ModelCard>) message.obj;
+                cards.postValue(search);
+            }
+        });
+    }
+
+    public void getAllVideoByName(String name, MutableLiveData<List<ModelVideo>> video) {
+        api.getAllVideoByName(name, new Handler(Looper.getMainLooper()){
+            @Override
+            public void handleMessage(Message message) {
+                super.handleMessage(message);
+                List<ModelVideo> search = (List<ModelVideo>) message.obj;
+                video.postValue(search);
+            }
+        });
+    }
+
+    public void getComprtitionByDate(String date, MutableLiveData<List<ModelCompetition>> competitions) {
+        api.getCompetitonByDate(date, new Handler(Looper.getMainLooper()){
+            @Override
+            public void handleMessage(Message message) {
+                super.handleMessage(message);
+                List<ModelCompetition> search = (List<ModelCompetition>) message.obj;
+                competitions.postValue(search);
+            }
+        });
     }
 }

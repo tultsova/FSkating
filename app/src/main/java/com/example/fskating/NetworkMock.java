@@ -11,7 +11,7 @@ import com.example.fskating.models.ModelVideo;
 
 import java.util.ArrayList;
 import java.util.List;
-
+import java.util.Locale;
 
 
 public class NetworkMock implements API{
@@ -26,14 +26,14 @@ public class NetworkMock implements API{
         video = new ArrayList<>();
 
         // создание моделей соревнований
-        competitions.add(new ModelCompetition(1L, "4 февраля",
+        competitions.add(new ModelCompetition(1L, "4.2",
                 "4:55 Олимпиада. Командные соревнования. Мужчины - КП \n" +
                         "6:35 Олимпиада. Командные соревнования. Танцы на льду - РТ \n" +
                         "8:15 Олимпиада. Командные соревнования. Парное катание - КП"));
-        competitions.add(new ModelCompetition(2L, "6 февраля",
+        competitions.add(new ModelCompetition(2L, "6.2",
                 "4:30 Олимпиада. Командные соревнования. Женщины - КП \n" +
                         "6:50 Олимпиада. Командные соревнования. Мужчины - ПП"));
-        competitions.add(new ModelCompetition(3L, "7 февраля",
+        competitions.add(new ModelCompetition(3L, "7.2",
                 "4:15 Олимпиада. Командные соревнования. Парное катание - ПП \n" +
                         "5:30 Олимпиада. Командные соревнования. Танцы на льду - ПТ \n" +
                         "6:35 Олимпиада. Командные соревнования. Женщины - ПП"));
@@ -123,6 +123,55 @@ public class NetworkMock implements API{
         new Thread(() -> {
             Message message = new Message();
             message.obj = video;
+            handler.sendMessage(message);
+        }).start();
+    }
+
+    @Override
+    public void getAllCardsByName(String name, Handler handler) {
+        new Thread(() -> {
+            String nameSearch = name.toLowerCase(Locale.ROOT);
+            Message message = new Message();
+            List<ModelCard> search = new ArrayList<>();
+            for (ModelCard card: cards) {
+               String nameIg = card.getName().toLowerCase(Locale.ROOT);
+                if (nameIg.contains(nameSearch)) {
+                    search.add(card);
+                }
+            }
+            message.obj = search;
+            handler.sendMessage(message);
+        }).start();
+    }
+
+    @Override
+    public void getAllVideoByName(String name, Handler handler) {
+        new Thread(() -> {
+            String nameSearch = name.toLowerCase(Locale.ROOT);
+            Message message = new Message();
+            List<ModelVideo> search = new ArrayList<>();
+            for (ModelVideo one: video) {
+                String nameIg = one.getName().toLowerCase(Locale.ROOT);
+                if (nameIg.contains(nameSearch)) {
+                    search.add(one);
+                }
+            }
+            message.obj = search;
+            handler.sendMessage(message);
+        }).start();
+    }
+
+    @Override
+    public void getCompetitonByDate(String date, Handler handler) {
+        new Thread(() -> {
+            Message message = new Message();
+            List<ModelCompetition> search = new ArrayList<>();
+            for (ModelCompetition competition: competitions) {
+                if (competition.getData().contains(date)) {
+                    search.add(competition);
+                }
+            }
+            message.obj = search;
             handler.sendMessage(message);
         }).start();
     }

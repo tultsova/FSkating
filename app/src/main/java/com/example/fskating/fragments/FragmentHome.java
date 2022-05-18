@@ -69,7 +69,7 @@ public class FragmentHome extends Fragment {
             AdapterVideo adapterVideo = new AdapterVideo();
             recyclerView.setAdapter(adapterVideo);
 
-            viewModelVideo.getAllVideo().observe(getViewLifecycleOwner(), video -> {
+            viewModelVideo.getVideo().observe(getViewLifecycleOwner(), video -> {
                 adapterVideo.setVideoList(video);
                 adapterVideo.notifyDataSetChanged();
             });

@@ -18,8 +18,10 @@
                 android:src="@drawable/ic_search"
                 android:paddingStart="13dp"
                 android:paddingTop="8dp"
-                tools:ignore="RtlSymmetry" />
-            <EditText android:id="@+id/inputSearch"
+                android:paddingEnd="8dp"
+                tools:ignore="RtlSymmetry"
+              />
+            <EditText android:id="@+id/editText"
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
                 android:hint="@string/search" />
