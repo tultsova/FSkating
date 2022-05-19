@@ -71,7 +71,7 @@ public class FragmentCard extends Fragment {
             SP.addYouTubePlayerListener(new AbstractYouTubePlayerListener() {
                 @Override
                 public void onReady(@NonNull YouTubePlayer youTubePlayer) {
-                    youTubePlayer.cueVideo(card.getUrlSP(), 0);
+                   youTubePlayer.cueVideo(card.getUrlSP(), 0);
                 }
             });
             FP.addYouTubePlayerListener(new AbstractYouTubePlayerListener() {

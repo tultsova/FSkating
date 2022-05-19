@@ -170,10 +170,10 @@ public class NetworkMock implements API{
                 if (competition.getDataFormated().contains(date)) {
                     search.add(competition);
                 }
-                if (search.isEmpty()) {
-                    ModelCompetition competitonNot = new ModelCompetition(4L, "", "", "Соревнований нет");
-                    search.add(competitonNot);
-                }
+            }
+            if (search.isEmpty()) {
+                ModelCompetition competitonNot = new ModelCompetition(4L, "", "", "Соревнований нет");
+                search.add(competitonNot);
             }
             message.obj = search;
             handler.sendMessage(message);
