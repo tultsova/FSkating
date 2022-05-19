@@ -5,6 +5,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.CalendarView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
@@ -19,6 +20,7 @@ import com.example.fskating.R;
 import com.example.fskating.view_models.ViewModelCalendarCompetition;
 
 import java.text.SimpleDateFormat;
+import java.util.Calendar;
 import java.util.Locale;
 
 import dagger.hilt.android.AndroidEntryPoint;
@@ -52,6 +54,8 @@ public class FragmentCalendarCompetition extends Fragment {
             adapterCompetition.notifyDataSetChanged();
         });
         CalendarView calendarView = root.findViewById(R.id.calendar);
+        Calendar c = Calendar.getInstance();
+        viewModelCalendarCompetition.inputDate(String.valueOf(c.getTime()));
         calendarView.setOnDateChangeListener(new CalendarView.OnDateChangeListener() {
             @Override
             public void onSelectedDayChange(@NonNull CalendarView calendarView, int i, int i1, int i2) {

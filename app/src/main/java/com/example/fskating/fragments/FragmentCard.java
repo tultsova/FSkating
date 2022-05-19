@@ -22,6 +22,7 @@ import com.example.fskating.view_models.ViewModelCalendarCompetition;
 import com.example.fskating.view_models.ViewModelCard;
 import com.pierfrancescosoffritti.androidyoutubeplayer.core.player.YouTubePlayer;
 import com.pierfrancescosoffritti.androidyoutubeplayer.core.player.listeners.AbstractYouTubePlayerListener;
+import com.pierfrancescosoffritti.androidyoutubeplayer.core.player.listeners.YouTubePlayerFullScreenListener;
 import com.pierfrancescosoffritti.androidyoutubeplayer.core.player.views.YouTubePlayerView;
 
 import java.util.ArrayList;
